@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capital - Rahul R Gadgimata</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Rahul R Gadgimata</h1>
+    <nav>
+        <a href="index.html">About Me</a>
+        <a href="investments.html">Investments</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<div class="container">
+    <section id="capital">
+        <h2>Current Capital</h2>
+        <p>My net worth is approximately <strong>₹1,000 Crore</strong>.</p>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2024 Rahul R Gadgimata. All rights reserved. | <a href="contact.html">Contact</a></p>
+</footer>
+
+</body>
+</html>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const body = document.body;
+
+        // Add fade-in animation on page load
+        body.classList.add('fade-in');
+
+        // Add fade-out animation on navigation
+        const links = document.querySelectorAll('nav a');
+        links.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                const target = event.target.href;
+
+                body.classList.remove('fade-in');
+                body.classList.add('fade-out');
+
+                // Delay navigation until fade-out animation completes
+                setTimeout(() => {
+                    window.location.href = target;
+                }, 500);
+            });
+        });
+    });
+</script>
